@@ -13,7 +13,7 @@ env:
 jobs:
   check-version:
     name: Check latest Aseprite release
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     outputs:
       download_url: ${{ steps.version_info.outputs.download_url }}
       latest_tag: ${{ steps.version_info.outputs.latest_tag }}
@@ -65,7 +65,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
        matrix:
-         os: [windows-latest, ubuntu-latest, macOS-latest]
+         os: windows-latest
        fail-fast: false
     steps:
       - name: (Windows) Install dependencies
